@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import PokeCard from './PokeCard';
 import axios from 'axios';
 
-function PokeData() {
+const PokeData = () => {
   const [pokeData, setPokeData] = useState({});
 
   useEffect(() => {
-    const fetchPokemon = () => 
-      axios.get('https://pokeapi.co/api/v2/pokemon/1')
-        .then(poke => {
-          console.log(poke.data)
-          setPokeData(poke.data)
-        });
-      fetchPokemon()
-  }, [])
+    axios.get('https://pokeapi.co/api/v2/pokemon/1')
+      .then(res => {
+        setPokeData(res.data)
+      })
+      .catch(err => console.log('Error', err))
+  }, []);
 
   return (
     <div>
-
+      <PokeCard pokeData={pokeData}/>
     </div>
   )
 }
