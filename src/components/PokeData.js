@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const PokeData = () => {
   const [pokeData, setPokeData] = useState();
-  const [pokeIndex, setPokeIndex] = useState(1);
+  let [pokeIndex, setPokeIndex] = useState(6);
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
@@ -14,9 +14,20 @@ const PokeData = () => {
       .catch(err => console.log('Error', err))
   }, [pokeIndex]);
 
+  const increment = () => {
+    (pokeIndex === 802) ? setPokeIndex(pokeIndex = 1) : setPokeIndex(pokeIndex + 1)
+  }
+
+  const decrement = () => {
+    (pokeIndex === 1) ? setPokeIndex(pokeIndex = 802) : setPokeIndex(pokeIndex - 1)
+  }
+
+
   return (
     <div>
       <PokeCard pokeData={pokeData}/>
+      <button onClick={increment}>Next</button>
+      <button onClick={decrement}>Previous</button>
     </div>
   )
 }
