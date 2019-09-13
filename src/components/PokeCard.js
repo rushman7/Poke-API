@@ -20,9 +20,7 @@ const PokeCard = props => {
         {pokeData.types.map(attr => <p key={attr.type.url}>{attr.type.name}</p>)}
       </div>
       <div className='poke-stats'>
-        {pokeData.stats.map(attr => {
-          <p>HP </p>
-        })}
+        {pokeData.stats.map(attr => <p key={attr.stat.name}>{attr.stat.name.toUpperCase()} {attr.base_stat}</p>)}
       </div>
     </div>
   )
