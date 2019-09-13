@@ -1,17 +1,20 @@
 import React from 'react';
 
 const PokeCard = props => {
-  if (!props) {
-    return <div>Loading...</div>
+
+  const {pokeData} = props;
+
+  if (!pokeData) {
+    return <h2>Loading...</h2>
   }
 
-  const { front_default } = props.pokeData.sprites;
+  // const { name, weight, sprites } = props.pokeData
 
   return ( 
     <div>
-      <h3>{front_default}</h3>
-      <h3>{props.pokeData.name}</h3>
-      <h3>{props.pokeData.weight}</h3>
+      <img src={pokeData.sprites.front_default} alt={pokeData.name}/>
+      <h3>{pokeData.name}</h3>
+      <h3>{pokeData.weight}</h3>
     </div>
   )
 }
