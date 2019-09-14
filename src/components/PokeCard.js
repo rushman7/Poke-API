@@ -3,6 +3,7 @@ import { white } from 'ansi-colors';
 
 const PokeCard = props => {
 
+
   const typeColor = {
   backgroundColor: '#F98133',
   color: 'white',
@@ -10,11 +11,7 @@ const PokeCard = props => {
 }
 
   const {pokeData} = props;
-
-  if (!pokeData) {
-    return <h2>Loading...</h2>
-  }
-
+  
   return ( 
     <div className='poke-card'>
       <div className='poke-card-left'>
@@ -34,7 +31,8 @@ const PokeCard = props => {
         </div>
       </div>
     </div>
-  )
+  );
+
 }
 
 export default PokeCard;
