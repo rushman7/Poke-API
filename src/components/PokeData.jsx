@@ -30,17 +30,15 @@ const PokeData = (props) => {
     setPokeSearch(e.target.value);
   }
 
-  console.log(pokemonList);
-
   let filteredPokemon = pokemonList.filter(pokeName => pokeName.data.name.indexOf(pokeSearch) !== -1)
 
   return (
     <div>
       <h4>Gotta Catchem All ({MAX_POKEMON})</h4>
       <input 
-        className="search_txt"
+        className="search_name"
         type="text"
-        placeholder="Search..."
+        placeholder="Search Pokemon..."
         value={pokeSearch}
         onChange={filterOnChange}
       />
