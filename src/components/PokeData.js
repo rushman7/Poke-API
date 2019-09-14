@@ -1,38 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import PokeCard from './PokeCard';
+// import PokeCard from './PokeCard';
 import axios from 'axios';
 
 const PokeData = () => {
-  const [pokeData, setPokeData] = useState();
+  // const [pokeData, setPokeData] = useState();
+  const [pokeIndex, setPokeIndex] = useState(1);
+  const [pokemonList, setPokemonList] = useState([]);
+
+  const MAX_POKEMON = 802;
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/4')
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
       .then(res => {
-        let data = {};
-        data.abilities = res.data.abilities;
-        data.base_experience = res.data.base_experience;
-        data.forms = res.data.forms;
-        data.game_indices = res.data.game_indices;
-        data.height = res.data.height;
-        data.held_items = res.data.held_items;
-        data.id = res.data.id;
-        data.is_default = res.data.is_default;
-        data.location_area_encounters = res.data.location_area_encounters;
-        data.moves = res.data.moves;
-        data.name = res.data.name;
-        data.species = res.data.species;
-        data.sprites = res.data.sprites;
-        data.stats = res.data.stats;
-        data.types = res.data.types;
-        data.weight = res.data.weight;
-        setPokeData(data);
+        setPokemonList([...pokemonList, res]);
+        if(pokeIndex < MAX_POKEMON){
+           setPokeIndex(pokeIndex + 1);
+        }
       })
       .catch(err => console.log('Error', err))
-  }, []);
+  }, [pokeIndex]);
+
+  if(pokemonList.length < MAX_POKEMON){
+    return <h1>Fetching pokemon data..</h1>;
+  }
 
   return (
     <div>
-      <PokeCard data={pokeData}/>
+      <h2>GOTEM ALL!</h2>
     </div>
   )
 }

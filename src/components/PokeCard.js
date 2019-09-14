@@ -3,14 +3,11 @@ import React from 'react';
 const PokeCard = props => {
 
   const {data} = props;
-
-
   
   if (!data) {
     return <h2>Loading..</h2>;
   }
-
-  console.log(data);
+  
   return ( 
     <div>
       <img src={data.sprites.front_default} alt={data.name} />
