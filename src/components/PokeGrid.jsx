@@ -3,7 +3,7 @@ import PokeData from "./PokeData";
 
 const PokeGrid = () => {
   // Total pokemon is 802
-  const MAX_POKEMON = 802;
+  const MAX_POKEMON = 100;
 
   return (
     <>

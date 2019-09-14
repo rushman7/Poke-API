@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 550px;
+  max-width: 450px;
   width: 615px;
   margin: 10px 10px;
   background: #fff;
@@ -15,7 +15,7 @@
     display: flex;
 
     .poke-card-left {
-      width: 65%;
+      width: 60%;
 
       .poke-card-title {
         width:100%;
@@ -50,12 +50,8 @@
         border-radius: 10px;
         font-size:0.3rem;
 
-        h2{
-          padding:10px 0;
-        }
-
         div{
-          width:80%;
+          width:100%;
           display:flex;
           justify-content: space-between;
           padding:3px 0;
@@ -69,7 +65,7 @@
       display:flex;
       flex-direction:column;
       align-items: center;
-      width: 35%;
+      width: 40%;
 
       .poke-card-topright {
         display: flex;
@@ -86,14 +82,14 @@
 
         h3{
           font-size: 1rem;
-          margin-top:10px;
           text-align:right;
           color:#000;
         }
 
         .poke-type {
           display: flex;
-          padding: 5px 10px;
+          max-width: 180px;
+          padding: 5px 0px;
         }
       }
     }
@@ -101,7 +97,7 @@
     .poke-skills {
       background-color:#0002;
       width:90%;
-      height:82px;
+      height:90px;
       display:flex;
       flex-flow: column;
       align-items: center;
