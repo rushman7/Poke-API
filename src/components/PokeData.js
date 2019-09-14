@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import PokeCard from './PokeCard';
+import PokeCard from './PokeCard';
 import axios from 'axios';
 
 const PokeData = () => {
-  // const [pokeData, setPokeData] = useState();
   const [pokeIndex, setPokeIndex] = useState(1);
   const [pokemonList, setPokemonList] = useState([]);
 
@@ -26,7 +25,7 @@ const PokeData = () => {
 
   return (
     <div>
-      <h2>GOTEM ALL!</h2>
+      <PokeCard pokeData={pokeData}/>
     </div>
   )
 }

@@ -5,8 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>How do you get a pikachu on a bus?</h1>
-      <h2>You poke-em-on!</h2>
+      <h1>PokeDex+</h1>
       <PokeData />
     </div>
   );
