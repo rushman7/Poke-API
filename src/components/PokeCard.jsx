@@ -13,7 +13,11 @@ const PokeCard = props => {
               {pokeData.name.charAt(0).toUpperCase() +
                 pokeData.name.substring(1)}
             </h2>
-            <i className="gender fa fa-venus" aria-hidden="true"></i>
+            {
+              Math.round(Math.random() * 100) > 50 ? 
+              <i className="gender fa fa-venus" aria-hidden="true"></i> :
+              <i className="gender fa fa-mars" aria-hidden="true"></i>
+            }
             <h3>
               Lv. {Math.round(Math.random() * 100)}
             </h3>
