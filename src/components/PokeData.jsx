@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PokeCard from './PokeCard';
+import PokeLoader from './PokeLoader';
 import axios from 'axios';
 
-const PokeData = () => {
+const PokeData = (props) => {
   const [pokeIndex, setPokeIndex] = useState(1);
   const [pokemonList, setPokemonList] = useState([]);
 
-  const MAX_POKEMON = 100;
+  const {MAX_POKEMON} = props;
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
@@ -17,17 +18,17 @@ const PokeData = () => {
         }
       })
       .catch(err => console.log('Error', err))
-  }, [pokeIndex]);
+  }, [pokeIndex, MAX_POKEMON]);
 
   if(pokemonList.length < MAX_POKEMON){
-    return <h1>Fetching pokemon data..</h1>;
+    return <PokeLoader message="Catching Em All..."/>;
   }
 
   return (
-    <div>
+    <>
       {pokemonList.map((card, index) => <PokeCard key={index} pokeData={card.data}/>)}
-    </div>
-  )
+    </>
+  );
 }
 
 export default PokeData;

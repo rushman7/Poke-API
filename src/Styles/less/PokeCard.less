@@ -1,47 +1,131 @@
-
 .poke-card {
   display: flex;
-  width: 80%;
-  margin: 10px auto;
-  border: 1px solid black;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 550px;
+  width: 615px;
+  margin: 10px 10px;
+  background: #fff;
+  padding:15px 10px;
+  border-radius: 10px;
+  box-shadow: #000A 4px 4px 4px;
+  transition: border 500ms;
 
-  .poke-card-left {
-    width: 60%;
+  .poke-card-middle {
+    display: flex;
 
-    .poke-stats {
-      border: 1px solid black;
-      text-align: left;
-      padding-left: 10px;
+    .poke-card-left {
+      width: 65%;
+
+      .poke-card-title {
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:5px;
+
+        h2 {
+          font-size: 1.1rem;
+          padding:5px 0;
+        }
+
+        .gender{
+          color:red;
+          font-weight:bold;
+          font-size:1.3rem;
+        }
+
+        h3{
+          font-size:1rem;
+        }
+      }
+
+      .poke-stats {
+        display:flex;
+        height:230px;
+        flex-direction:column-reverse;
+        background-color: #00000011;
+        text-align: left;
+        padding: 10px 10px;
+        border-radius: 10px;
+        font-size:0.3rem;
+
+        h2{
+          padding:10px 0;
+        }
+
+        div{
+          width:80%;
+          display:flex;
+          justify-content: space-between;
+          padding:3px 0;
+          margin:0;
+          border-bottom: 1px solid #0001;
+        }
+      }
     }
-  }
 
-  .poke-card-right {
-    width: 40%;
+    .poke-card-right {
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      width: 35%;
 
-    .poke-type {
-      border: 1px solid black;
-      display: flex;
-      justify-content: space-between;
-      padding: 0px 15px;
+      .poke-card-topright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        img{
+          height:128px;
+          padding:0;
+          margin:0;
+        }
 
-      p {
-        background-color: #F98133;
-        color: white;
-        border: 1px solid white;
-        border-radius: 20px;
-        padding: 5px;
+
+        h3{
+          font-size: 1rem;
+          margin-top:10px;
+          text-align:right;
+          color:#000;
+        }
+
+        .poke-type {
+          display: flex;
+          padding: 5px 10px;
+        }
       }
     }
 
     .poke-skills {
-      border: 1px solid black;
-      text-align: left;
-      padding: 5px 0px 0px 5px;
+      background-color:#0002;
+      width:90%;
+      height:82px;
+      display:flex;
+      flex-flow: column;
+      align-items: center;
+      padding:5px;
+      border-radius:5px;
 
-      p {
-        padding-left: 15px;
+      h3{
+        font-size:0.88rem;
+        padding: 4px 0;
+      }
+
+      .poke-card-move-bullet{
+        font-size:0.75rem;
+        vertical-align: center;
+        padding:2px 0;
+        color:#000A;
+      }
+
+      p{
+        text-align:left;
+        width:100%;
+        font-size:0.75rem;
+        padding-left: 5px;
       }
     }
-    
   }
 }

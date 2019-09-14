@@ -1,0 +1,32 @@
+.poke-loader{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+    background: #000C;
+    padding: 20px 20px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.poke-loader h2{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color:#fff;
+    margin:20px;
+}
+
+.poke-spinner{
+    width:32px;
+    height:32px;
+    animation: spinner 800ms linear infinite;
+    margin:20px;
+}
+
+@keyframes spinner{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
