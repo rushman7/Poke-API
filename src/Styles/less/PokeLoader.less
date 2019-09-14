@@ -1,0 +1,38 @@
+.poke-loader{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    // width: 500px;
+    // height:200px;
+    width:100vw;
+    height:100vh;
+    // margin:20px;
+    background: #000A;
+    padding: 20px 20px;
+    position: absolute;
+    // top:calc(50vh - 100px);
+    // left:calc(50vw - 250px);
+    top:0;
+    left:0;
+    // border: 1px solid #223A;
+}
+
+.poke-loader h2{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color:#fff;
+    margin:20px;
+}
+
+.poke-spinner{
+    width:32px;
+    height:32px;
+    animation: spinner 800ms linear infinite;
+    margin:20px;
+}
+
+@keyframes spinner{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
