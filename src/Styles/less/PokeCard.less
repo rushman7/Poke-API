@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width:500px;
-  width: 30%;
+  min-width: 550px;
+  width: 615px;
   margin: 10px 10px;
   background: #fff;
-  padding:10px 10px;
+  padding:15px 10px;
   border-radius: 10px;
-  border: 4px solid #0001;
+  box-shadow: #000A 4px 4px 4px;
+  transition: border 500ms;
 
   .poke-card-middle {
     display: flex;
@@ -24,29 +25,28 @@
         padding:5px;
 
         h2 {
-          font-size: 1.4rem;
+          font-size: 1.1rem;
           padding:5px 0;
-          padding-left:20px;
         }
 
         .gender{
           color:red;
           font-weight:bold;
-          font-size:1.6rem;
+          font-size:1.3rem;
         }
 
         h3{
-          padding-right:20px;
+          font-size:1rem;
         }
       }
 
       .poke-stats {
         display:flex;
-        height:220px;
+        height:230px;
         flex-direction:column-reverse;
         background-color: #00000011;
         text-align: left;
-        padding: 20px 10px;
+        padding: 10px 10px;
         border-radius: 10px;
         font-size:0.3rem;
 
@@ -58,8 +58,9 @@
           width:80%;
           display:flex;
           justify-content: space-between;
-          padding:0;
+          padding:3px 0;
           margin:0;
+          border-bottom: 1px solid #0001;
         }
       }
     }
@@ -114,7 +115,7 @@
     .poke-skills {
       background-color:#0002;
       width:90%;
-      height:80px;
+      height:82px;
       display:flex;
       flex-flow: column;
       align-items: center;
@@ -122,12 +123,22 @@
       border-radius:5px;
 
       h3{
-        
-        font-size:1rem;
+        font-size:0.88rem;
+        padding: 4px 0;
+      }
+
+      .poke-card-move-bullet{
+        font-size:0.75rem;
+        vertical-align: center;
+        padding:2px 0;
+        color:#000A;
       }
 
       p{
-        font-size:0.8rem;
+        text-align:left;
+        width:100%;
+        font-size:0.75rem;
+        padding-left: 5px;
       }
     }
   }
