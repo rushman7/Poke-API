@@ -6,12 +6,12 @@ const PokeData = () => {
   const [pokeIndex, setPokeIndex] = useState(1);
   const [pokemonList, setPokemonList] = useState([]);
 
-  const MAX_POKEMON = 802;
+  const MAX_POKEMON = 100;
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
       .then(res => {
-        setPokemonList([...pokemonList, res]);
+        setPokemonList(pokemonList => [...pokemonList, res]);
         if(pokeIndex < MAX_POKEMON){
            setPokeIndex(pokeIndex + 1);
         }
@@ -25,7 +25,7 @@ const PokeData = () => {
 
   return (
     <div>
-      <PokeCard pokeData={pokeData}/>
+      {pokemonList.map((card, index) => <PokeCard key={index} pokeData={card.data}/>)}
     </div>
   )
 }

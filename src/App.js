@@ -1,6 +1,6 @@
 import React from 'react';
-import PokeData from './components/PokeData'
-import './App.css';
+import PokeData from './components/PokeData';
+import './Styles/css/index.css'
 
 function App() {
   return (
