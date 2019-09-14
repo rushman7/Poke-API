@@ -6,8 +6,10 @@ import axios from 'axios';
 const PokeData = (props) => {
   const [pokeIndex, setPokeIndex] = useState(1);
   const [pokemonList, setPokemonList] = useState([]);
+  const [pokeSearch, setPokeSearch] = useState('');
 
-  const {MAX_POKEMON} = props;
+  // Total pokemon is 802
+  const MAX_POKEMON = 100;
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
@@ -24,10 +26,28 @@ const PokeData = (props) => {
     return <PokeLoader message="Catching Em All..."/>;
   }
 
+  const filterOnChange = (e) => {
+    setPokeSearch(e.target.value);
+  }
+
+  console.log(pokemonList);
+
+  let filteredPokemon = pokemonList.filter(pokeName => pokeName.data.name.indexOf(pokeSearch) !== -1)
+
   return (
-    <>
-      {pokemonList.map((card, index) => <PokeCard key={index} pokeData={card.data}/>)}
-    </>
+    <div>
+      <h4>Gotta Catchem All ({MAX_POKEMON})</h4>
+      <input 
+        className="search_txt"
+        type="text"
+        placeholder="Search..."
+        value={pokeSearch}
+        onChange={filterOnChange}
+      />
+      <div className="poke-card-grid">
+        {filteredPokemon.map((card, index) => <PokeCard key={index} pokeData={card.data}/>)}
+      </div>
+    </div>
   );
 }
 
