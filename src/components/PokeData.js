@@ -11,7 +11,7 @@ const PokeData = () => {
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeIndex}`)
       .then(res => {
-        setPokemonList([...pokemonList, res]);
+        setPokemonList(pokemonList => [...pokemonList, res]);
         if(pokeIndex < MAX_POKEMON){
            setPokeIndex(pokeIndex + 1);
         }
