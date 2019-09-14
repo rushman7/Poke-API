@@ -2,7 +2,10 @@ import React from 'react';
 
 const PokeTypeBadge = props =>{
 
-    return (<p>PokeType</p>);
+    if(!props.type){
+
+    }
+    return (<p className={'badge-type-'+ props.type}>{props.type.toUpperCase()}</p>);
 };
 
 export default PokeTypeBadge;

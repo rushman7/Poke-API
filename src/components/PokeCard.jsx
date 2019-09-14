@@ -1,4 +1,5 @@
 import React from "react";
+import PokeTypeBadge from './PokeTypeBadge';
 
 const PokeCard = props => {
   const { pokeData } = props;
@@ -33,7 +34,7 @@ const PokeCard = props => {
             <h3><i class="fa fa-minus" aria-hidden="true"></i> {(parseInt(pokeData.id) < 10 ? "00" : parseInt(pokeData.id) < 100 ? "0":  "") + pokeData.id } <i class="fa fa-minus" aria-hidden="true"></i></h3>
             <div className="poke-type">
               {pokeData.types.map((attr, index) => (
-                <p key={index}>{attr.type.name.toUpperCase()}</p>
+                <PokeTypeBadge key={index} type={attr.type.name}/>
               ))}
             </div>
           </div>
