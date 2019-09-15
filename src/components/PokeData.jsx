@@ -3,7 +3,7 @@ import PokeCard from './PokeCard';
 import PokeLoader from './PokeLoader';
 import axios from 'axios';
 
-const PokeData = (props) => {
+const PokeData = () => {
   const [pokeIndex, setPokeIndex] = useState(1);
   const [pokemonList, setPokemonList] = useState([]);
   const [pokeSearch, setPokeSearch] = useState('');
@@ -47,10 +47,10 @@ const PokeData = (props) => {
 
   if(pokemonList.length < MAX_POKEMON){
     return (
-      <>
+      <div>
         <h4>Gotta Fetch Em All ({MAX_POKEMON})</h4>
-        <PokeLoader message="If this is your first time it make take a while to fetch the data..."/>
-      </>
+        <PokeLoader message="If this is your first time it may take a while to fetch the data..."/>
+      </div>
     );
   }
 
