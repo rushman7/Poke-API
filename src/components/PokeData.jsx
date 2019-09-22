@@ -10,7 +10,7 @@ const PokeData = () => {
 
 
   // Total pokemon is 802
-  const MAX_POKEMON = 100;
+  const MAX_POKEMON = 151;
 
   useEffect(() => {
     
